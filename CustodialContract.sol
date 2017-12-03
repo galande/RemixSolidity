@@ -10,9 +10,7 @@ contract CustodialContract{
     }
     
     modifier ifClient{
-        if(msg.sender != client){
-            throw;
-        }
+        require(client == msg.sender);
         _;
     }
     
